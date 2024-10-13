@@ -44,7 +44,7 @@ df_dim_albuns = spark.read.parquet("/mnt/prata/dim_albuns")
 view_df = df_fact_songs.alias("songs") \
     .join(df_dim_artists.alias("artists"), col("songs.artist_id") == col("artists.artist_id"), "inner") \
     .join(df_dim_albuns.alias("albums"), col("songs.album_id") == col("albums.album_id"), "inner") \
-    .groupBy(
+    .select(
         col("songs.song_id"),
         col("songs.artist_id"),
         col("songs.album_id"),
@@ -52,7 +52,7 @@ view_df = df_fact_songs.alias("songs") \
         col("songs.duration").alias("song_duration"),
         col("songs.popularity").alias("song_popularity"),
         col("artists.artist_name"),
-        col("artists.genre"),
+        col("artists.genre").alias("artist_genres"),
         col("artists.popularity").alias("artist_popularity"),
         col("artists.followers").alias("artist_followers"),
         col("artists.artist_image"),
@@ -60,7 +60,8 @@ view_df = df_fact_songs.alias("songs") \
         col("albums.album_release_date"),
         col("albums.album_type"),
         col("albums.album_image")
-    ) 
+    ).distinct() 
+
 view_df.display()
 
 # COMMAND ----------

@@ -67,7 +67,7 @@ dim_albuns_df = df.select(explode("top_tracks").alias("track")) \
         "track.album.album_type as album_type",        
         "track.album.images[0].url as album_image",    
         "explode(track.artists.id) as artist_id"             
-    )
+    ).distinct()
 
 #SALVANDO NA CAMADA PRATA EM PARQUET
 
