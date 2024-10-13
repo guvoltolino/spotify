@@ -80,7 +80,19 @@ artists = [
     'Post Malone',
     'Shawn Mendes',
     'Taylor Swift',
-    'Harry Styles'
+    'Harry Styles',
+    'Freddie Mercury',
+    'Nirvana',
+    'Eminem',
+    'Ed Sheeran',
+    'Kendrick Lamar',
+    'Dua Lipa',
+    'Lady Gaga',
+    'The Rolling Stones',
+    'Rihanna',
+    'Imagine Dragons',
+    'Coldplay',
+    'Maroon 5'
 ]
 
 artist_info = []

@@ -46,7 +46,7 @@ dim_artists_df = df.selectExpr(
     "artist_details.popularity as popularity",
     "artist_details.followers.total as followers",
     "artist_details.images.url[0] as artist_image",
-    "explode(artist_details.genres) as genre"  
+    "artist_details.genres[0] as genre"  
 )
 
 #SALVANDO NA CAMADA PRATA EM PARQUET
