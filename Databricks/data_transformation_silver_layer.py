@@ -1,4 +1,6 @@
 # Databricks notebook source
+#IMPORTANDO BIBLIOTECAS
+
 import os
 import json
 from pyspark.sql.functions import explode, expr, col
@@ -14,17 +16,6 @@ container_name = dbutils.secrets.get(scope="spotify", key="container-name")
 # COMMAND ----------
 
 #CONEXÃO COM O DATALAKE
-
-if not any(mount.mountPoint == "/mnt/bronze" for mount in dbutils.fs.mounts()):
-    dbutils.fs.mount(
-        source=f"wasbs://{container_name}@{datalake_name}.blob.core.windows.net/bronze",
-        mount_point="/mnt/bronze",
-        extra_configs={
-            f"fs.azure.account.key.{datalake_name}.blob.core.windows.net": datalake_key
-        }
-    )
-else:
-    print("A montagem '/mnt/bronze' já existe.")
 
 if not any(mount.mountPoint == "/mnt/prata" for mount in dbutils.fs.mounts()):
     dbutils.fs.mount(
