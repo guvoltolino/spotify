@@ -1,5 +1,5 @@
 
-# 🎧 Projeto ETL Spotify no Databricks 🎶
+# 🎧Spotify Artists Analysis 🎶
 
 Este projeto tem como objetivo realizar um processo completo de ETL (Extração, Transformação e Carga) utilizando a API do Spotify, armazenar os dados processados no Azure Data Lake e visualizá-los no Power BI. A pipeline ETL foi implementada no Databricks utilizando PySpark para manipulação dos dados.
 
@@ -55,5 +55,6 @@ Essa modelagem facilita a consulta e visualização de dados, tornando-a ideal p
 
 Os dados finais armazenados no Azure Data Lake são consumidos pelo Power BI para gerar dashboards interativos com informações detalhadas sobre músicas, artistas e álbuns.
 
-![image](https://github.com/user-attachments/assets/38d8050b-8e11-495a-a8d3-a17c0456d757)
+![image](https://github.com/user-attachments/assets/80528e42-b351-40b1-aff9-fa61bc58c671)
+
 
